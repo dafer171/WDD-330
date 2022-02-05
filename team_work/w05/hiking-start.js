@@ -51,6 +51,7 @@ function renderHikeList(hikes, parent) {
     parent.appendChild(renderOneHike(hike));
   });
 }
+
 function renderOneHike(hike) {
   const item = document.createElement("li");
 
@@ -65,7 +66,15 @@ function renderOneHike(hike) {
                     <h3>Difficulty</h3>
                     <p>${hike.difficulty}</p>
                 </div>
+                <div>
+                  <button onclick="showDetails()">Details</button>
+                </div>
         </div>`;
 
   return item;
+}
+
+function showDetails() {
+  renderOneHike();
+  //window.alert(`${hike.distance}`);
 }
