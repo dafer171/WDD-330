@@ -48,8 +48,8 @@ const pintarTareas = () => {
   Object.values(todo).forEach((tarea) => {
     const clone = template.cloneNode(true);
     clone.querySelector("p").textContent = tarea.text;
-    //clone.querySelectorAll(".fas")[0].dataset.id = tarea.id;
-    //clone.querySelectorAll(".fas")[1].dataset.id = tarea.id;
+    clone.querySelectorAll(".fa-solid")[0].dataset.id = tarea.id;
+    clone.querySelectorAll(".fa-solid")[1].dataset.id = tarea.id;
     fragment.appendChild(clone);
     //console.log(tarea);
   });
