@@ -26,14 +26,14 @@ form.addEventListener("submit", (e) => {
 
 const setTarea = (e) => {
   if (input.value.trim() === "") {
-    //console.log("esta vacion");
+    //console.log("esta vacio");
     return;
   }
 
   const tarea = {
     id: Date.now(),
     text: input.value,
-    estatus: false,
+    status: false,
   };
 
   tareas[tarea.id] = tarea;
@@ -53,12 +53,13 @@ const pintarTareas = () => {
     const clone = template.cloneNode(true);
     clone.querySelector("p").textContent = tarea.text;
 
-    if (tarea.estado) {
+    if (tarea.status) {
       clone
         .querySelectorAll(".fa-solid")[0]
         .classList.replace("fa-expand", "fa-check");
 
       clone.querySelector("p").style.textDecoration = "Line-through";
+      console.log(tarea.status);
     }
 
     clone.querySelectorAll(".fa-solid")[0].dataset.id = tarea.id;
@@ -72,8 +73,8 @@ const pintarTareas = () => {
 
 const btnAccion = (e) => {
   if (e.target.classList.contains("fa-expand")) {
-    console.log(e.target.dataset.id);
-    tareas[e.target.dataset.id].estado = true;
+    //console.log(e.target.dataset.id);
+    tareas[e.target.dataset.id].status = true;
     pintarTareas();
     //console.log(tareas);
   }
@@ -85,12 +86,12 @@ const btnAccion = (e) => {
   }
 
   if (e.target.classList.contains("fa-check")) {
-    console.log(e.target.dataset.id);
-    tareas[e.target.dataset.id].estado = false;
+    //console.log(e.target.dataset.id);
+    tareas[e.target.dataset.id].status = false;
     pintarTareas();
-    //console.log(tareas);
+    console.log(tareas);
   }
 
-  console.log(btnAccion);
+  //console.log(btnAccion);
   e.stopPropagation();
 };
