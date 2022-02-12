@@ -1,17 +1,17 @@
 const form = document.getElementById("form");
 const input = document.getElementById("input");
-const todoList = document.getElementById("todoList");
+const listaTarea = document.getElementById("todoList");
 const template = document.getElementById("template").content;
 const fragment = document.createDocumentFragment();
 
-let todo = {};
+let tareas = {};
 /*
-document.addEventListener("DOMContentLoaded", () => {
-  pintarTareas();
-});
-*/
+  document.addEventListener("DOMContentLoaded", () => {
+    pintarTareas();
+  });
+  */
 
-todoList.addEventListener("click", (e) => {
+listaTarea.addEventListener("click", (e) => {
   btnAccion(e);
 });
 
@@ -34,7 +34,7 @@ const setTarea = (e) => {
     estatus: false,
   };
 
-  todo[tarea.id] = tarea;
+  tareas[tarea.id] = tarea;
   //console.log("diste click");
   //console.log(tarea);
 
@@ -44,21 +44,42 @@ const setTarea = (e) => {
 };
 
 const pintarTareas = () => {
-  todoList.innerHTML = "";
-  Object.values(todo).forEach((tarea) => {
+  listaTarea.innerHTML = "";
+  Object.values(tareas).forEach((tarea) => {
     const clone = template.cloneNode(true);
     clone.querySelector("p").textContent = tarea.text;
+
+    if (tarea.estado) {
+      clone
+        .querySelectorAll(".fa-solid")[0]
+        .classList.replace("fa-expand", "fa-check");
+
+      clone.querySelector("p").style.textDecoration = "Line-through";
+    }
+
     clone.querySelectorAll(".fa-solid")[0].dataset.id = tarea.id;
     clone.querySelectorAll(".fa-solid")[1].dataset.id = tarea.id;
     fragment.appendChild(clone);
     //console.log(tarea);
   });
   todoList.appendChild(fragment);
+  //console.log(tareas);
 };
 
 const btnAccion = (e) => {
-  //console.log(e.target.classList.contains("fa-solid fa-plus"))
-  if (e.target.classList.contains("fa-solid fa-plus")) {
+  if (e.target.classList.contains("fa-expand")) {
+    console.log(e.target.dataset.id);
+    tareas[e.target.dataset.id].estado = true;
+    pintarTareas();
+    //console.log(tareas);
   }
+
+  if (e.target.classList.contains("fa-x")) {
+    delete tareas[e.target.dataset.id];
+    pintarTareas();
+    //console.log(tareas);
+  }
+
+  console.log(btnAccion);
   e.stopPropagation();
 };
