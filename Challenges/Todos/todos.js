@@ -5,11 +5,13 @@ const template = document.getElementById("template").content;
 const fragment = document.createDocumentFragment();
 
 let tareas = {};
-/*
-  document.addEventListener("DOMContentLoaded", () => {
-    pintarTareas();
-  });
-  */
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("tareas")) {
+    tareas = JSON.parse(localStorage.getItem("tareas"));
+  }
+  pintarTareas();
+});
 
 listaTarea.addEventListener("click", (e) => {
   btnAccion(e);
@@ -44,6 +46,8 @@ const setTarea = (e) => {
 };
 
 const pintarTareas = () => {
+  localStorage.setItem("tareas", JSON.stringify(tareas));
+
   listaTarea.innerHTML = "";
   Object.values(tareas).forEach((tarea) => {
     const clone = template.cloneNode(true);
@@ -76,6 +80,13 @@ const btnAccion = (e) => {
 
   if (e.target.classList.contains("fa-x")) {
     delete tareas[e.target.dataset.id];
+    pintarTareas();
+    //console.log(tareas);
+  }
+
+  if (e.target.classList.contains("fa-check")) {
+    console.log(e.target.dataset.id);
+    tareas[e.target.dataset.id].estado = false;
     pintarTareas();
     //console.log(tareas);
   }
