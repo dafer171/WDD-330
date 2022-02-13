@@ -22,18 +22,21 @@
   </head>
   <body>
     <main>
-      <h1>TODOs</h1>
+      <h1 class="d-flex p-2 bd-highlight justify-content-center">TODOs</h1>
 
-      <form id="form">
+      <form id="form" class="d-flex p-2 bd-highlight justify-content-center">
         <input id="input" type="text" placeholder="Type your TODO" autofocus />
         <button type="submit"><i class="fa-solid fa-plus"></i></button>
       </form>
 
-      <div id="todoList" class="todoStyles"></div>
+      <div id="todoList"></div>
     </main>
 
     <template id="template">
-      <div id="list">
+      <div
+        id="list"
+        class="d-flex p-2 bd-highlight justify-content-center p-2 bd-highlight"
+      >
         <button type="button">
           <i class="fa-solid fa-expand"></i>
         </button>
