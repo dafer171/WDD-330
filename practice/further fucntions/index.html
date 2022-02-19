@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futrther functions</title>
+</head>
+<body>
+    <h1>Further Functions</h1>
+        <p>
+            I am pasting my JavaScript code for you to see it. Just inspect the page
+            or see the page source. Also take a look over the console
+          </p>
+          <!--
+              function square(x) {
+    return x*x;
+}
+
+//console.log(square.length)
+
+function sayHello(){
+    return `Hello, my name is ${ this.name }`;
+}
+//console.log(sayHello())
+
+const clark = { name: 'Clark' };
+const bruce = { name: 'Bruce' };
+//console.log(sayHello.call(clark));
+//console.log(sayHello.call(bruce));
+
+function sayHello(greeting='Hello'){
+    return `${ greeting }, my name is ${ this.name }`;
+}
+    
+//console.log(sayHello.call(clark, 'How do you do'));
+//console.log(sayHello.call(bruce));
+
+/*
+If a function doesn’t refer to an object as this in its body, it can still be called
+using the call() method, but you need provide null as its first argument
+*/
+
+console.log(square.call(null, 4))
+
+/*
+The apply() method works in the same way, except the arguments of the
+function are provided as an array
+*/
+console.log(square.apply(null, [4]))
+
+
+
+function square(x){
+    square.cache = square.cache || {};
+    if (!square.cache[x]) {
+    square.cache[x] = x*x;
+    }
+    return square.cache[x]
+    }
+console.log(square(-11))
+
+/*
+Immediately Invoked Function Expressions
+The function also has to be made into an expression, which is done by placing the whole
+declaration inside parentheses
+*/
+
+/*
+(function(){
+    const temp = 'World';
+    console.log(`Hello ${temp}`);
+    })();
+*/
+
+/*
+Temporary Variables
+a temporary variable, called temp, which only exists
+while the IIFE is invoked
+*/
+let a = 1;
+let b = 2;
+(()=>{
+    const temp = a;
+    a = b;
+    b = temp;
+})();
+//console.log(a);
+//<< 2
+//console.log(b);
+//<< 1
+//console.log(temp);
+
+/*
+destructuring
+*/
+let [c,d] = [1,2];
+[c,d] = [d,c];
+
+/*
+Initialization Code
+*/
+(function() {
+    const name = 'Peter Parker'; // This might be obtained from a cookie in reality
+    const days =['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const date = new Date(),today = days[date.getDay()];
+    console.log(`Welcome back ${name}. Today is ${today}`);
+    })();
+
+/*
+Safe Use of Strict Mode
+
+(function() {
+    'use strict';
+    // All your code would go inside this function
+    })();
+
+*/
+(function() {
+    // block A
+    const name = 'Block A';
+    console.log(`Hello from ${name}`);
+    }());
+    (function() {
+    // block B
+    const name = 'Block B';
+    console.log(`Hello from ${name}`);
+    }());
+
+/*
+Functions that Define and Rewrite Themselves
+*/
+function party(){
+    console.log('Wow this is amazing!');
+    party = function(){
+    console.log('Been there, got the T-Shirt');
+    }
+    }
+
+//console.log(party())
+function party() {
+    console.log('Been there, got the T-Shirt');
+        }
+//console.log(party())
+
+/*
+Init-Time Branching*/
+
+function ride(){
+    if (window.unicorn) {
+    ride = function(){
+    // some code that uses the brand new and sparkly unicorn methods
+    return 'Riding on a unicorn is the best!';
+    }
+    } else {
+    ride = function(){
+    // some code that uses the older pony methods
+    return 'Riding on a pony is still pretty good';
+    }
+    }
+    return ride();
+    }
+
+/*
+Recursive Functions
+A recursive function is one that invokes itself until a certain condition is met
+*/
+
+function factorial(n) {
+    if (n === 0) {
+    return 1;
+    } else {
+    return n * factorial(n - 1);
+    }
+    }
+
+/*
+Callbacks
+*/
+          -->
+    
+ <script src="main.js"></script>   
+</body>
+</html>
