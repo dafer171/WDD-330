@@ -1,0 +1,63 @@
+img {
+  width: 300px;
+  transform: translate(45px, 15px);
+  /*transform: translateY(1030px);*/
+  -webkit-transform: translate(45px, 15px); /* iOS8, Android4.4.3, BB10 */
+  -ms-transform: translate(45px, 15px); /* IE9 only */
+  display: inline-block;
+}
+
+span {
+  font-size: 100px;
+  color: #999999;
+  display: inline-block;
+  color: #484848;
+  transform: translateX(40px);
+  transform: scale(1.5, 0.25);
+}
+
+h1:hover span {
+  color: #484848;
+  transform: translateX(40px) scale(1.5);
+  color: #484848;
+  transform: rotate(10deg) translateX(40px) scale(1.5);
+  transform: skew(15deg, 4deg);
+}
+
+#example {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  0% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    background-color: yellow;
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    background-color: blue;
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    background-color: green;
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    background-color: red;
+    left: 0px;
+    top: 0px;
+  }
+}
