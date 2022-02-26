@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <button type="button" id="showPeople" onclick="showPeople()">
-        Show people
-      </button>
-      <button type="button" id="next" onclick="changePage()">Next Page</button>
-      <div class="cards"></div>
-    </main>
+    <header>
+      <h1>Star wars API</h1>
+      <input type="button" id="ships" value="List of Ships" />
+      <input type="button" id="people" value="List of People" />
+    </header>
+
+    <section class="content"></section>
+
     <script src="main.js"></script>
   </body>
 </html>
