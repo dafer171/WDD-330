@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Form validation</h1>
+    <h2>Client side Form Validation</h2>
+    <p>Before submitting data to the server, it is important to ensure all required form controls are filled out, in the correct format. This is called client-side form validation</p>
+    <p>Client-side validation is an initial check and an important feature of good user experience; by catching invalid data on the client-side, the user can fix it straight away.</p>
+    <p>However, client-side validation should not be considered an exhaustive security measure! Your apps should always perform security checks on any form-submitted data on the server-side as well as the client-side, because client-side validation is too easy to bypass</p>
+    <h3>What is form validation?</h3>
+    <ul>
+        <li>"This field is required" (You can't leave this field blank).</li>
+        <li>"Please enter your phone number in the format xxx-xxxx" (A specific data format is required for it to be considered valid).</li>
+        <li>"Please enter a valid email address" (the data you entered is not in the right format).</li>
+        <li>"Your password needs to be between 8 and 30 characters long and contain one uppercase letter, one symbol, and a number." (A very specific data format is required for your data).</li>
+    </ul>
+    <h3>Why we do that?</h3>
+    <ul>
+        <li>We want to get the right data, in the right format.</li>
+        <li>We want to protect our users' data</li>
+        <li>We want to protect ourselves.</li>
+    </ul>
+    <h3>Different types of client-side validation</h3>
+    <ul>
+        <li>Built-in form validation</li>
+            <ul>
+                <li>required: Specifies whether a form field needs to be filled in before the form can be submitted.</li>
+                <li>minlength and maxlength: Specifies the minimum and maximum length of textual data (strings)</li>
+                <li>min and max: Specifies the minimum and maximum values of numerical input types</li>
+                <li>type: Specifies whether the data needs to be a number, an email address, or some other specific preset type.</li>
+                <li>pattern: Specifies a regular expression that defines a pattern the entered data needs to follow.</li>
+            </ul>
+        <li>JavaScript</li>
+        <ul>
+            <li>The Constraint Validation API</li>
+            <ul>
+                <li>HTMLButtonElement (represents a "button" element)</li>
+                <li>HTMLFieldSetElement (represents a "fieldset" element)</li>
+                <li>HTMLInputElement (represents an "input" element)</li>
+                <li>HTMLOutputElement (represents an "output" element)</li>
+                <li>HTMLSelectElement (represents a "select" element)</li>
+                <li>HTMLTextAreaElement (represents a "textarea" element)</li>
+            </ul>
+        </ul>
+    </ul>
+    <p>The Constraint validation API makes the following properties available on the above elements.</p>
+    <ul>
+        <li>validationMessage: Returns a localized message describing the validation constraints that the control doesn't satisfy (if any). If the control is not a candidate for constraint validation (willValidate is false) or the element's value satisfies its constraints (is valid), this will return an empty string.</li>
+        <li>validity: Returns a ValidityState object that contains several properties describing the validity state of the element. You can find full details of all the available properties in the ValidityState reference page; below is listed a few of the more common ones:</li>
+        <ul>
+            <li>patternMismatch: Returns true if the value does not match the specified pattern, and false if it does match. If true, the element matches the :invalid CSS pseudo-class.</li>
+            <li>tooLong: Returns true if the value is longer than the maximum length specified by the maxlength attribute, or false if it is shorter than or equal to the maximum. If true, the element matches the :invalid CSS pseudo-class.</li>
+            <li>tooShort: Returns true if the value is shorter than the minimum length specified by the minlength attribute, or false if it is greater than or equal to the minimum. If true, the element matches the :invalid CSS pseudo-class.</li>
+            <li>rangeOverflow: Returns true if the value is greater than the maximum specified by the max attribute, or false if it is less than or equal to the maximum. If true, the element matches the :invalid and :out-of-range CSS pseudo-classes.</li>
+            <li>rangeUnderflow: Returns true if the value is less than the minimum specified by the min attribute, or false if it is greater than or equal to the minimum. If true, the element matches the :invalid and :out-of-range CSS pseudo-classes.</li>
+            <li>typeMismatch: Returns true if the value is not in the required syntax (when type is email or url), or false if the syntax is correct. If true, the element matches the :invalid CSS pseudo-class.</li>
+            <li>valid: Returns true if the element meets all its validation constraints, and is therefore considered to be valid, or false if it fails any constraint. If true, the element matches the :valid CSS pseudo-class; the :invalid CSS pseudo-class otherwise.</li>
+            <li>valueMissing: Returns true if the element has a required attribute, but no value, or false otherwise. If true, the element matches the :invalid CSS pseudo-class.</li>
+        </ul>
+        <li>willValidate: Returns true if the element will be validated when the form is submitted; false otherwise</li>
+    </ul>
+    <p>The Constraint Validation API also makes the following methods available on the above elements and the form element.</p>
+    <ul>
+        <li>checkValidity()</li>
+        <li>reportValidity()</li>
+        <li>setCustomValidity(message)</li>
+    </ul>
+    <p>Implementing a customized error message</p>
+    
+
+</body>
+</html>
