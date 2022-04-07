@@ -1,0 +1,94 @@
+{
+    "company": [
+      {
+        "name": "Ajuntament de Ferrerias",
+        "photo": "ferrerias.jpg",
+        "motto": "Ferreries is here",
+        "phoneNumber": "+34  971 37 30 03",
+        "web": "http://www.ajferreries.org/",
+        "events": [
+          "July 23: Tradicional games",
+          "July 30: Circus skils workshop",
+          "August 6: Exhibition of antique post-cards"
+        ]
+      },
+
+      {
+        "name": "Ajuntament de Ciutadella",
+        "photo": "ciutadella.jpg",
+        "motto": "Enjoy Ciutadella",
+        "phoneNumber": "+34 971 38 10 50",
+        "web": "http://www.ajciutadella.org/",
+        "events": [
+          "July 29: Nocturnal tour in Pont d'en Gil: stairs, sea and rocks ",
+          "July 30: Creative tour, enjoy curiosities and crafts of Ciutadella",
+          "July 31: Past and present of Cala Morell, the north of Ciutadella"
+        ]
+      },
+
+      {
+        "name": "Ajuntament de Maó",
+        "photo": "ajuntament.jpg",
+        "motto": "Visit our city and you only think about when to return!",
+        "phoneNumber": "+34 971 36 98 00",
+        "web": "http://www.ajmao.org/",
+        "events": [
+          "July 26: Live painting festival",
+          "August 11: JJMM Summer Festival",
+          "August 29: Circus festival"
+        ]
+      },
+
+      {
+        "name": "Civitatis",
+        "photo": "civitatis.jpg",
+        "motto": "Pure life Menorca",
+        "phoneNumber": "+34 696 950 323",
+        "web": "https://www.civitatis.com/",
+        "events": [
+          "August 2: Boat trip through the southern coves from Ciudadela",
+          "August 3: Boat trip through the southern coves from Cala Galdana",
+          "August 4: Kayak excursion with snorkel from Fornells"
+        ]
+      },
+
+      {
+        "name": "Consortium of the military museum of Menorca",
+        "photo": "consortium.jpg",
+        "motto": "Consortium dedicated to the conservation and dissemination of the military historical heritage of Menorca",
+        "phoneNumber": "+34 971 355 760",
+        "web": "https://www.consorciomilitarmenorca.com/",
+        "events": [
+          "July 28: Guided tour with sunset",
+          "July 29: The Shadow of La Mola",
+          "October 2-3: La Mola War Race"
+        ]
+      },
+
+      {
+        "name": "Es Claustre",
+        "photo": "claustre.jpg",
+        "motto": "Terrassa Concerts Menorca",
+        "phoneNumber": "+34 871 53 73 93",
+        "web": "https://www.esclaustre.com/",
+        "events": [
+          "July 25: Raquel Lúa",
+          "August 5: Beth",
+          "August 7: Rodrigo Laviña"
+        ]
+      },
+      
+      {
+        "name": "Port de Maó",
+        "photo": "port.jpg",
+        "motto": "A Port Thinking of You",
+        "phoneNumber": "+34 971 36 30 66",
+        "web": "https://portdemao.es/",
+        "events": [
+          "July 29: Night market and music in the port",
+          "July 31: Art evenings in Baixar Mar",
+          "August 14: Salpols concert"
+        ]
+      }
+    ]
+  }

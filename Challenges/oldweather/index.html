@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <meta name="description" content="Weather forescast" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/small.css" />
+    <link rel="stylesheet" href="css/medium.css" />
+    <link rel="stylesheet" href="css/large.css" />
+  </head>
+
+  <body>
+    <header class="clearfix">
+      <img src="images/web_logo.jpg" alt="website logo" />
+      <h1>Weather APP</h1>
+      <p>Look for the weather wherever you want</p>
+    </header>
+
+    <main class="clearfix">
+      <h1>Mahón</h1>
+      <div id="heroContainer">
+        <picture>
+          <source
+            srcset="images/mahon_400.jpg"
+            media="(min-width:500px) and (max-width:799px)"
+          />
+          <source srcset="images/mahon_600.jpg" media="(min-width:800px)" />
+          <img id="heroImg" src="images/mahon_250.jpg" alt="mahonlandscape" />
+        </picture>
+        <section id="weatherContainer">
+          <h2>Weather Sumary</h2>
+          <div class="weatherdetails">
+            <p class="label">Currently:</p>
+            <p class="value"><span id="current"></span></p>
+
+            <p class="label">Current:</p>
+            <p class="value"><span id="current-temp"></span>&deg;F</p>
+
+            <p class="label">Humidity:</p>
+            <p class="value"><span id="humidity"></span>%</p>
+          </div>
+        </section>
+      </div>
+
+      <h2>Five Day Forecast</h2>
+      <div class="forecast"></div>
+
+      <div class="events"></div>
+    </main>
+    <footer>
+      <div class="contact">
+        <div class="itemContact">
+          <h3>Contact information</h3>
+          <p>Email: pen21001@byui.edu</p>
+        </div>
+      </div>
+      &copy; <span id="currentYear"></span> | David F. Peña | Spain |
+      <a href="https://www.byui.edu/online" target="_blank"
+        >BYUI Online Learning</a
+      >
+
+      <p>Last modified: <span id="LastUpdated"></span></p>
+    </footer>
+
+    <script src="js/lastUpdate.js"></script>
+    <script src="js/ma_forecast.js"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+@media only screen and (min-width: 60em) {
+  .navi {
+    display: flex;
+  }
+
+  .navi li {
+    display: block;
+    flex: 1 1 auto;
+  }
+
+  .navi a {
+    text-align: center;
+  }
+
+  .ham {
+    display: none;
+  }
+
+  main {
+    max-width: 1000px;
+  }
+
+  #heroContainer {
+    position: relative;
+  }
+
+  #weatherContainer {
+    position: absolute;
+  }
+
+  .weatherdetails {
+    color: white;
+    padding: 10px;
+  }
+
+  .label {
+    text-align: left;
+  }
+
+  #artImag {
+    max-width: 400px;
+    float: right;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .shadow:hover {
+    box-shadow: 0 0 50px #333;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: column;
+  }
+
+  .cards .text {
+    height: 45%;
+  }
+
+  .container {
+    border: solid 1px;
+    display: block;
+  }
+
+  .container:nth-of-type(even) section {
+    grid-column-start: 1;
+  }
+
+  .container:nth-of-type(even) div {
+    grid-row-start: 2;
+  }
+
+  .forecast {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
