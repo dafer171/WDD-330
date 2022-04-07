@@ -1,10 +1,10 @@
 let weather = {
-  apiKey: "URB2K4B93AMZ8MLNFT7ZGKJQE",
+  apiKey: "33033af6ab98d426efd2c19223b9729c",
   fetchWeather: function (city) {
     fetch(
-      "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" +
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
         city +
-        "?unitGroup=metric&key=" +
+        "&units=metric&appid=" +
         this.apiKey
     )
       .then((response) => {
@@ -15,7 +15,6 @@ let weather = {
         return response.json();
       })
       .then((data) => this.displayWeather(data));
-    console.log(data);
   },
   displayWeather: function (data) {
     const { name } = data;
